@@ -31,12 +31,13 @@ int main(){
 				else {
 					printf("\nPlaylist creation unsuccessful!");
 				}
+				printf("\n%d songs added!", numSongs);
 				break;
 			case 2:
 				printf("You ran choice 2\n");
 				break;
 			case 3:
-				printf("You ran choice 3\n");
+				playPlayList(newPlaylist);
 				break;
 			case 4:
 				printf("You ran choice 4\n");

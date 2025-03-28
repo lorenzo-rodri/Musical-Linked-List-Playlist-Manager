@@ -8,7 +8,6 @@ int createPlayList(A3Song **headLL, char fileName[MAX_LENGTH]){
 	char buffer[150];
 	char *data;
 
-	*headLL = malloc(sizeof(A3Song));	// Allocate memory
 	srand(time(NULL)); 					// Set random number generator
 
 	FILE * fPtr;  
@@ -29,6 +28,7 @@ int createPlayList(A3Song **headLL, char fileName[MAX_LENGTH]){
 		// Store song name
 		data = strtok(buffer, ","); 			// Store first element (title) into data
 		strcpy(newSong->songName, data);
+		
 		// Get each of the 21 notes and store into data
 		for (int i = 0; i<21; i++){			    
 			data = strtok(NULL, ",");			// This tells the program to get the next element in the line which will be the note in this case
@@ -54,7 +54,6 @@ int createPlayList(A3Song **headLL, char fileName[MAX_LENGTH]){
 		}
 		numSongs++;
 	}
-
 	fclose(fPtr);
 	return numSongs;
 }
