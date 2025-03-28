@@ -1,14 +1,16 @@
-bin/musicalLL: mainA3.o
-	gcc -std=c99 -Wall mainA3.o -o bin/musicalLL
+bin/musicalLL: mainA3.o createPlayList.o
+	gcc -std=c99 -Wall mainA3.o createPlayList.o -o bin/musicalLL
 
 mainA3.o: src/mainA3.c include/givenA3.h
 	gcc -std=c99 -Wall -Iinclude -c src/mainA3.c -o mainA3.o
 
+createPlayList.o: src/createPlayList.c include/givenA3.h
+	gcc -std=c99 -Wall -Iinclude -c src/createPlayList.c -o createPlayList.o
+
 clean:
 	rm -f *.o bin/musicalLL
 
-# createPlayList.o: src/createPlayList.c include/givenA3.h
-# 	gcc -std=c99 -Wall -Iinclude -c src/createPlayList.c -o createPlayList.o
+
 
 # addNewSong.o: src/addNewSong.c include/givenA3.h
 # 	gcc -std=c99 -Wall -Iinclude -c src/addNewSong.c -o caddNewSong.o

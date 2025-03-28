@@ -4,6 +4,9 @@
 int main(){
 
 	int choice;
+	int numSongs;
+	char fileName[MAX_LENGTH] = "src/MusicalTunes.csv";
+	A3Song * newPlaylist = NULL;
 
 	while(choice != 9){
 		printf("\n======================================================\n");
@@ -21,7 +24,13 @@ int main(){
 		scanf("%d", &choice);
 		switch (choice){
 			case 1:
-				printf("You ran choice 1\n");
+				numSongs = createPlayList(&newPlaylist, fileName);
+				if (numSongs != -1){ 		//create new palylist, if print message for success/fail
+					printf("\nPlaylist created successfully!");
+				}
+				else {
+					printf("\nPlaylist creation unsuccessful!");
+				}
 				break;
 			case 2:
 				printf("You ran choice 2\n");
