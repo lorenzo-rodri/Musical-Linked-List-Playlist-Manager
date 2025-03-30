@@ -3,8 +3,7 @@
 // dont need to run file with cmd line args, just hardcode src/ldskf.csv
 int main(){
 
-	int choice;
-	int numSongs;
+	int choice, numSongs, beginOrEnd;
 	char fileName[MAX_LENGTH] = "src/MusicalTunes.csv";
 	A3Song * newPlaylist = NULL;
 
@@ -34,7 +33,14 @@ int main(){
 				printf("\n%d songs added!", numSongs);
 				break;
 			case 2:
-				printf("You ran choice 2\n");
+				printf("\nEnter your choice for beginOrEnd: ");
+				scanf("%d", &beginOrEnd);
+				if (addNewSong(&newPlaylist, beginOrEnd) == true){
+					printf("\nYou added a song!");
+				}
+				else{
+					printf("\nUnable to add to playlist!");
+				}
 				break;
 			case 3:
 				playPlayList(newPlaylist);

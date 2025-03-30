@@ -36,7 +36,7 @@ int createPlayList(A3Song **headLL, char fileName[MAX_LENGTH]){
 		}
 
 		// Assign a random id + length of song name
-		id = (rand() % 1000) + 1;
+		id = rand() % (1000 + 1);
 		id += strlen(newSong->songName);
 		newSong->songId = id;
 
