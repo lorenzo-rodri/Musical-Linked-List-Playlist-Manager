@@ -18,7 +18,6 @@ bool addNewSong(A3Song **headLL, int beginOrEnd){
         // Remove newline
 		newSong->songName[strcspn(newSong->songName,"\n")] = '\0';
 
-        printf("\nYou entered: %s", newSong->songName);
     } else {
         printf("\nError reading input.");
         return false;
@@ -27,10 +26,12 @@ bool addNewSong(A3Song **headLL, int beginOrEnd){
 	// Get random ID.
 	newSong->songId = rand() % (1000 + 1);
 	newSong->songId += strlen(newSong->songName);
-	printf("\nYour random ID is: %d", newSong->songId);
+	printf("\nSong ID: %d", newSong->songId);
+
+	printf("\nSong Name: %s", newSong->songName);
 
 	// Generate random notes
-	printf("\nYour notes are: ");
+	printf("\nNotes: ");
 	for (int i=0; i<21; i++){
 		strcpy(newSong->songNotes[i], notes[rand() % (6 + 1)]); // Random index between 0 and 6
 		printf("%s ", newSong->songNotes[i]);
@@ -42,6 +43,7 @@ bool addNewSong(A3Song **headLL, int beginOrEnd){
 	if (beginOrEnd == 1){	// Insert beginning
 		newSong->nextSong = *headLL;
 		*headLL = newSong;
+		printf("\nSong added at the beginning!");
 	}
 	else{					// Insert end
 		A3Song *temp = *headLL;
@@ -49,6 +51,7 @@ bool addNewSong(A3Song **headLL, int beginOrEnd){
 				temp = temp->nextSong;
 			}
 			temp->nextSong = newSong;
+			printf("\nSong added at the end!");
 	}	
 	
 	return true;

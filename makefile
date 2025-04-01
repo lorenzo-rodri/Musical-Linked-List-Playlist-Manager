@@ -1,5 +1,5 @@
-bin/musicalLL: mainA3.o createPlayList.o playPlayList.o addNewSong.o
-	gcc -std=c99 -Wall mainA3.o createPlayList.o playPlayList.o addNewSong.o -o bin/musicalLL
+bin/musicalLL: mainA3.o createPlayList.o playPlayList.o addNewSong.o playSongGivenId.o playSongGivenName.o
+	gcc -std=c99 -Wall mainA3.o createPlayList.o playPlayList.o addNewSong.o playSongGivenId.o playSongGivenName.o -o bin/musicalLL
 
 mainA3.o: src/mainA3.c include/givenA3.h
 	gcc -std=c99 -Wall -Iinclude -c src/mainA3.c -o mainA3.o
@@ -13,6 +13,12 @@ playPlayList.o: src/playPlayList.c include/givenA3.h
 addNewSong.o: src/addNewSong.c include/givenA3.h
 	gcc -std=c99 -Wall -Iinclude -c src/addNewSong.c -o addNewSong.o
 
+playSongGivenId.o: src/playSongGivenId.c include/givenA3.h
+	gcc -std=c99 -Wall -Iinclude -c src/playSongGivenId.c -o playSongGivenId.o
+
+playSongGivenName.o: src/playSongGivenName.c include/givenA3.h
+	gcc -std=c99 -Wall -Iinclude -c src/playSongGivenName.c -o playSongGivenName.o
+
 clean:
 	rm -f *.o bin/musicalLL
 
@@ -20,11 +26,9 @@ clean:
 
 
 
-# playSongGivenId.o: src/playSongGivenId.c include/givenA3.h
-# 	gcc -std=c99 -Wall -Iinclude -c src/playSongGivenId.c -o playSongGivenId.o
 
-# playSongGivenName.o: src/playSongGivenName.c include/givenA3.h
-# 	gcc -std=c99 -Wall -Iinclude -c src/playSongGivenName.c -o playSongGivenName.o
+
+
 
 # countNotesInASong.o: src/countNotesInASong.c include/givenA3.h
 # 	gcc -std=c99 -Wall -Iinclude -c src/countNotesInASong.c -o countNotesInASong.o

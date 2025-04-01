@@ -6,8 +6,9 @@
 // TEST ON SCHOOL SERVER
 int main(){
 
-	int choice, numSongs, beginOrEnd;
+	int choice, numSongs, beginOrEnd, givenSongId;
 	char fileName[MAX_LENGTH] = "src/MusicalTunes.csv";
+	char givenSongName[MAX_LENGTH];
 	A3Song * newPlaylist = NULL;
 
 	while(choice != 9){
@@ -49,10 +50,15 @@ int main(){
 				playPlayList(newPlaylist);
 				break;
 			case 4:
-				printf("You ran choice 4\n");
+				printf("\nEnter the ID of the song you want to play: ");
+				scanf("%d", &givenSongId);
+				playSongGivenId(newPlaylist, givenSongId);
 				break;
 			case 5:
-				printf("You ran choice 5\n");
+				printf("\nEnter the name of the song you want to play: ");
+				getchar();
+				fgets(givenSongName, sizeof(givenSongName), stdin); 
+				playSongGivenName(newPlaylist, givenSongName);
 				break;
 			case 6:
 				printf("You ran choice 6\n");
