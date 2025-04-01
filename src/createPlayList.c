@@ -25,6 +25,9 @@ int createPlayList(A3Song **headLL, char fileName[MAX_LENGTH]){
 		int id;
 		A3Song *newSong = malloc(sizeof(A3Song)); // Allocate memory for the new node				
 		
+		// Remove newline
+		buffer[strcspn(buffer,"\n")] = '\0';
+
 		// Store song name
 		data = strtok(buffer, ","); 			// Store first element (title) into data
 		strcpy(newSong->songName, data);

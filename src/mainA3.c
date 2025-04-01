@@ -1,6 +1,9 @@
 #include "givenA3.h"
 
-// dont need to run file with cmd line args, just hardcode src/ldskf.csv
+// ADD ERROR CHECKING
+// TEST WITH VALGRIND
+// TEST WITH TEST HARNESS
+// TEST ON SCHOOL SERVER
 int main(){
 
 	int choice, numSongs, beginOrEnd;

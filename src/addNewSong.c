@@ -15,11 +15,9 @@ bool addNewSong(A3Song **headLL, int beginOrEnd){
 	printf("Enter the name of the song: ");
 	getchar();
 	if (fgets(newSong->songName, sizeof(newSong->songName), stdin) != NULL) {
-        // Remove the newline character if present
-        size_t len = strlen(newSong->songName);
-        if (len > 0 && newSong->songName[len - 1] == '\n') {
-            newSong->songName[len - 1] = '\0';
-        }
+        // Remove newline
+		newSong->songName[strcspn(newSong->songName,"\n")] = '\0';
+
         printf("\nYou entered: %s", newSong->songName);
     } else {
         printf("\nError reading input.");

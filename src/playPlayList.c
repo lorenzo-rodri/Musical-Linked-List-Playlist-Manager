@@ -18,6 +18,7 @@ void playPlayList(A3Song *headLL){
 				printf(".");
 			}
 		}
+		printf("\n");
 		ptr = ptr->nextSong;
 	}
 }
