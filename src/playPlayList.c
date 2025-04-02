@@ -10,6 +10,7 @@ void playPlayList(A3Song *headLL){
 
 	A3Song * ptr = headLL;
 
+	// Traverse linked list and print
 	while(ptr != NULL){
 		printf("\nSong ID: %d\nSong Name: %s\nNotes: ", ptr->songId, ptr->songName);
 		for (int i=0; i<21; i++){

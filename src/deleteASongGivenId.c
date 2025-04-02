@@ -1,5 +1,9 @@
 #include "givenA3.h"
+/*
+ Remove the song identified by givenSongId;
 
+ Return -1 if song doesn't exist
+ */
 int deleteASongGivenId(A3Song **headLL, int givenSongId){
 
 	A3Song * ptr = *headLL;

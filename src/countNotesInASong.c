@@ -1,5 +1,9 @@
 #include "givenA3.h"
+/* 
+Count and return the number of times a given note appears in the song identified by givenSongId;
 
+ Return -1 if song not found;
+ */
 int countNotesInASong(A3Song * headLL, int givenSongId, char whichNote[4]){
 
 	int matchingNotes = 0;
@@ -22,8 +26,6 @@ int countNotesInASong(A3Song * headLL, int givenSongId, char whichNote[4]){
 		printf("\nInvalid note!");
 		return -1; // Return -1 if no matching note is found
 	}
-
-	
 
 	// Search for ID
 	while(ptr != NULL){
