@@ -6,9 +6,10 @@
 // TEST ON SCHOOL SERVER
 int main(){
 
-	int choice, numSongs, beginOrEnd, givenSongId;
+	int choice, numSongs, beginOrEnd, givenSongId, matchingNotes;
 	char fileName[MAX_LENGTH] = "src/MusicalTunes.csv";
 	char givenSongName[MAX_LENGTH];
+	char whichNote[NOTE_LENGTH];
 	A3Song * newPlaylist = NULL;
 
 	while(choice != 9){
@@ -61,13 +62,23 @@ int main(){
 				playSongGivenName(newPlaylist, givenSongName);
 				break;
 			case 6:
-				printf("You ran choice 6\n");
+				printf("\nEnter the ID of the song you want to play: ");
+				scanf("%d", &givenSongId);
+				getchar();
+				printf("\nEnter the note that you want to count: ");
+				fgets(whichNote, sizeof(whichNote), stdin); 
+				matchingNotes = countNotesInASong(newPlaylist, givenSongId, whichNote);
+				if (matchingNotes != -1){
+					printf("\nThis note appears %d times in the song.", matchingNotes);
+				}
 				break;
 			case 7:
-				printf("You ran choice 7\n");
+				printf("\nEnter the ID of the song you want to play: ");
+				scanf("%d", &givenSongId);
+				deleteASongGivenId(&newPlaylist, givenSongId);
 				break;
 			case 8:
-				printf("You ran choice 8\n");
+				deletePlayList(&newPlaylist);
 				break;
 			case 9:
 				printf("Exiting the program...");
