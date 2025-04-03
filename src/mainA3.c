@@ -1,9 +1,5 @@
 #include "givenA3.h"
 
-// TEST WITH VALGRIND
-// TEST ON SCHOOL SERVER
-// TEST WITH TEST HARNESS
-
 int main(){
 
 	int choice, numSongs, beginOrEnd, givenSongId, matchingNotes;
