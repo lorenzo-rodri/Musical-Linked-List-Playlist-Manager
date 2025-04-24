@@ -19,7 +19,7 @@ A C-based musical playlist management system that uses linked lists for organizi
 1. Clone this repository to your local machine.
 2. Ensure you have a C compiler.
 3. Run `make` to compile the program.
-4. Run the program using "./bin/musicalLL" to interact with the playlist menu and manage songs.
+4. Run the program using `./bin/musicalLL`  to interact with the playlist menu and manage songs.
 
 ## Additional Info:
 This project is for educational purposes.
